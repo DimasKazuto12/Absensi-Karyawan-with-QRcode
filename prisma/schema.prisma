@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id           Int        @id @default(autoincrement())
+  name         String
+  usia         Int
+  lamaBekerja  Int
+  qrCodeId     String     @unique
+  role         Role       @default(KARYAWAN)
+  deskripsi    String?    // admin bisa kasih deskripsi ke karyawan
+  attendances  Attendance[]
+  createdAt    DateTime   @default(now())
+}
+
+model Attendance {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  checkIn   DateTime @default(now())
+  checkOut  DateTime?
+  date      DateTime @default(now())
+}
+
+enum Role {
+  ADMIN
+  KARYAWAN
+}

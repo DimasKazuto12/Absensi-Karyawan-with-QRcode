@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  allowedDevOrigins: ['192.168.18.10', 'localhost', '*.local'],
+   experimental: {
+    serverComponentsExternalPackages: ['@prisma/client', 'bcryptjs']
+  }
 };
 
 export default nextConfig;

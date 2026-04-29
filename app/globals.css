@@ -1,5 +1,57 @@
 @import "tailwindcss";
 
+@theme {
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-300: #d1d5db;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-white: #ffffff;
+}
+
+body {
+  background-color: var(--color-gray-50);
+}
+
+.btn-primary {
+  background-color: var(--color-blue-500);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-blue-600);
+}
+
+.btn-danger {
+  background-color: var(--color-red-500);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.btn-danger:hover {
+  background-color: var(--color-red-600);
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 0.25rem;
+}
+
+.input-field:focus {
+  outline: none;
+  ring: 2px solid var(--color-blue-500);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
